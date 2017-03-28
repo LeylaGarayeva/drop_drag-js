@@ -57,6 +57,15 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 }
+    document.write("<center>");
+for(var i = 0; i <= 5; i++) {
+    for(var x = 0; x <= i; x++)
+    {
+        document.write("*");
+    }
+    document.write("<br/>"); 
+}
+document.write("</center>"); 
 </script>
 <!-- drag drop replace -->
 
