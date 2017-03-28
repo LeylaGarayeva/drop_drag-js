@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#div1{
+    float: left;
+    width: 100px;
+    height: 170px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+#sebet{
+        width: 350px;
+        border:3px solid silver;
+        /*border-top:none;*/
+        height: 100px;
+        float: left;
+        margin: 10px;
+        padding: 10px;
+        position: relative;
+
+}
+#apple1,#apple2,#apple3,#apple4,#apple5{
+    width: 100px;
+    /*position: absolute;
+    left: 0;
+    top:0;*/
+}
+</style>
+</head>
+<body>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="apple.png" draggable="true" ondragstart="drag(event)" id="apple1" width="88" height="31">
+  <img src="apple.png" draggable="true" ondragstart="drag(event)" id="apple2" width="88" height="31">
+  <img src="apple.png" draggable="true" ondragstart="drag(event)" id="apple3" width="88" height="31">
+  <img src="apple.png" draggable="true" ondragstart="drag(event)" id="apple4" width="88" height="31">
+  <img src="apple.png" draggable="true" ondragstart="drag(event)" id="apple5" width="88" height="31">
+</div>
+
+<div id="sebet" ondrop="drop(event)" ondragover="allowDrop(event)">
+    
+</div>
+
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+<!-- drag drop replace -->
+
+</body>
+</html>
